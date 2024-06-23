@@ -359,3 +359,147 @@ if n3 > n4 and n3 > n1 and n3 > n2:
     print("Age of oldest People is", n3)
 if n4 > n1 and n4 > n2 and n4 > n3 :
     print("Age of oldest People is", n4)
+
+####################################################################################################
+# WAP a program to print use when the age entred by user is greater than or equal to to 18
+
+age= int(input("Entere to number: "))
+
+if age>=18:
+    print("Yes")
+else:
+    print("No")
+
+#Logical Operators & Relation Operation
+
+age=int(input("Enter the age:"))
+
+if (age>18 and age<59):  # and= true if both operators are true else false
+    print("You can work with us")
+else:
+    ("You can not work with us")
+
+
+if (age>18 or age<59): # or==true if at least one operator is true else false
+    print("You can work with us")
+else:
+    ("You can not work with us")
+
+####################################################################################################
+# Gretest number
+
+n1=int(input("Enter the first number:"))
+n2=int(input("Enter the Second number:"))
+n3=int(input("Enter the third number:"))
+n4=int(input("Enter the fourth number:"))
+
+if n1>n2 and n1>n3 and n1>n4:
+    print("Entered number is in greest", n1)
+elif n2>n3 and n2>n4 and n2>n1:
+    print("Entered number is in gretest", n2)
+elif n3>n4 and n3>n1 and n3>n2:
+    print("Enered number is in gretest",n3)
+elif n4>n1 and n4>n2 and n4>n3:
+    print("Entered number is in gretest", n4)
+if (n1>n2):
+    f1=n1
+else:
+    f1=n2
+if (n3>n4):
+    f2=n3
+else:
+    f2=n4
+if(f1>f2):
+    print(f1,"is in greatest number")
+else:
+    print(f2,"is in greatest number")
+
+####################################################################################################
+#WAP to find out whether a student is pass or or fail
+#  it total 40% and at least 33% in each subject to pass.Assume 3 subjects and total marks as an input from the user.
+
+sub1 = int(input("Eenter first subject Marks: "))
+sub2 = int(input("Enter second subject marks: "))
+sub3 = int(input("Enter third subject marks"))
+
+rest= (sub1+sub2+sub3)/3
+
+if rest>=40 and rest<33:
+    print("struent pass")
+else:
+    print("student fail")
+
+if (sub1<33 or sub2<33 or sub3<33):
+    print("You are fail because you have less than 33% in one of the subject")
+elif(sub1+sub2+sub3)/3 < 40:
+    print("You are fail due to total precentage less than 40")
+else:
+    print("Congatulations! You passed the exam")
+
+####################################################################################################
+# A spam comment is defined as a text containing following keywords:
+# make a lot of money", "buy now","Subscribe this","click this" writea program to detect this spams.
+
+text= input("Enter the text\n")
+
+if ("make a lot of money" in text):
+    Spam:True
+elif("bue now" in text):
+    Spam=True
+elif("Scbscribe this" in text):
+    Spam=True
+elif("click this" in text):
+    Spam=True
+else:
+    Spam=False
+if(True):
+    print("This text is spam")
+else:
+    print("This text is not spam")
+
+####################################################################################################
+# WAP which find out whether agiven name is present in a list or not.
+
+names=["pooja","jeel","megha","mayank","shru"]
+name=input("Enter the name to check\n")
+if name in names:
+    print("Your name is present in list")
+else:
+    print("Your name is not present in list")
+
+char=input("enter the charater")
+if char==char(len(10)):
+    print(a)
+else:
+    print(b)
+
+####################################################################################################
+#WAP to find out whether a given post is talking about"Mayank" or not.
+
+text=input("Enter the text\n")
+
+if ("mayank" in text):
+    Spam=True
+else:
+    Spam=False
+if(Spam==True):
+    print("talking about mayank")
+else:
+    print("Not talking about mayank")
+
+####################################################################################################
+i=1
+while i<=50:
+    print(i)
+    i=i+1
+
+i=0
+while i<5:
+    print("Pooja")
+    i=i+1
+    
+fruits=["Banana","watermelon","Grapes","Mango"]
+i=0
+while i<len(fruits):
+    print(fruits[i])
+    i=i+1
