@@ -1,4 +1,7 @@
-student={}
+##################################### Student_Date####################################
+student={}  # key:value id, name, age ==> key=id,  value: {"Name", "Age"}
+# 1:{"Name": pooja, "Age":24}
+# id, Name, Age
 
 def add():
     id=int(input("Enter the student Id: "))
