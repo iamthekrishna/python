@@ -40,9 +40,9 @@ print(Greeting,name)
 
 # ============================String Slicing==================================#
 name="Pooja"
-print(name[0])  # ===> The index ina string start from 0 to (length-1)
+print(name[0])  # ===> The index in a string start from 0 to (length-1)
 print(name[1])
-print(name[2])
+print(name[2]) 
 print(name[3])
 print(name[4])
 
