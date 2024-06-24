@@ -11,7 +11,7 @@ class class_name:
     statement..1
     .
     .
-    statement..2
+    statement..2  
 '''
 
 # ========== Empty class ========== 
@@ -319,6 +319,7 @@ print(res)
 #          - Inherit class can only access
 #          - To make the member protected we can use '_' (single underscore)prefix.
 
+'''
 class TestClass:
     def __init__(self):
         self.mem1 = 100     # public member 
@@ -361,3 +362,267 @@ tc.mem1 = 145
 tc.setMem2(999)
 # tc.__printMem()
 tc.display()
+'''
+
+# Inheritance: It is the powerful concept of oops. Once class can inherit the property and behaviour of another
+#               class called inheritance.
+# single Inheritance:
+# multilevel Inheritance:
+# Hierarchical Inheritance:
+# Multiple Inheritance:
+
+'''
+class Parent:
+    Name = "Parent Class"
+
+class Child(Parent):
+    CName = "Child Class"
+
+cObj = Child()
+print(cObj.CName)
+print(cObj.Name)
+
+# super() function is used to give access to methods and properties of a parent class
+class Parent:
+    def __init__(self):
+        self.Name = "Parent class"
+
+class Child(Parent):
+    def __init__(self):
+        super().__init__()
+        self.CName = "Child Class"
+
+cObj = Child()
+print(cObj.CName)
+print(cObj.Name)
+'''
+
+# Single inheritance and override method
+'''
+class Parent:
+    Name = "Parent Class"
+    def __init__(self):
+        print("Inside Parent Class")
+    
+    def Method(self):
+        print("Inside Parent Method")
+
+class Child(Parent):
+    CName = "Child Class"
+    def __init__(self):
+        super().__init__()
+        print("Inside Child class")
+    
+    def Method(self):
+        print("Inside child Method")
+    
+cObj = Child()
+cObj.Method()
+'''
+'''
+#multiple Inheritance
+class Base:
+    def __init__(self, val):
+        print("inside base")
+    def BaseMethod(self):
+        print("base method")
+
+class Base1:
+    def __init__(self):
+        print("inside base one")
+    def Base1Method(self):
+        print("base method one")
+
+class Derived(Base, Base1):
+    def __init__(self):
+        super().__init__(self)
+        print("inside derived")
+
+dObj = Derived()
+dObj.BaseMethod()
+dObj.Base1Method()
+'''
+#Diamond 
+'''
+class Base:
+    def __init__(self, val):
+        print("inside base")
+    def Method(self):
+        print("base method")
+
+class Base1:
+    def __init__(self):
+        print("inside base one")
+    def Method(self):
+        print("base method one")
+
+class Derived(Base, Base1):
+    def __init__(self):
+        super().__init__(self)
+        print("inside derived")
+
+dObj = Derived()
+dObj.Method()
+'''
+
+# Multilevel Inheritance
+'''
+class Base:
+    def __init__(self):
+        print("Base")
+    def Method(self):
+        print("Base metohd")
+
+class Derived(Base):
+    def __init__(self):
+        super().__init__()
+        print("Derived")
+    def Method(self):
+        print("Derived metohd")
+
+class Derived1(Derived):
+    def __init__(self):
+        super().__init__()
+        print("Derived1")
+    # def Method(self):
+    #     print("Derived1 metohd")
+
+obj = Derived1()
+obj.Method()
+'''
+
+
+# Python Program to depict multiple inheritance
+# when every class defines the same method
+ 
+# class Class1:
+#     def m(self):
+#         print("In Class1") 
+ 
+# obj = Class1()
+# Class1.m(obj)
+
+# Python Program to depict multiple inheritance
+# when every class defines the same method
+''' 
+class Class1:
+    def m(self):
+        print("In Class1") 
+       
+class Class2(Class1):
+    def m(self):
+        print("In Class2")
+ 
+class Class3(Class1):
+    def m(self):
+         print("In Class3")     
+     
+class Class4(Class2, Class3):
+    def m(self):
+        print("In Class4")   
+ 
+obj = Class4()
+obj.m()
+ 
+Class2.m(obj)
+Class3.m(obj)
+Class1.m(obj)
+'''
+# Python Program to depict multiple inheritance 
+# when we try to call the method m for Class1, 
+# Class2, Class3 from the method m of Class4 
+'''
+class Class1:
+    def m(self):
+        print("In Class1")  
+      
+class Class2(Class1):
+    def m(self):
+        print("In Class2")
+ 
+class Class3(Class1):
+    def m(self):
+        print("In Class3")     
+     
+class Class4(Class2, Class3):
+    def m(self):
+        print("In Class4")   
+        Class2.m(self)
+        Class3.m(self)
+        Class1.m(self)
+ 
+obj = Class4()
+obj.m()
+'''
+
+# Method resolution order: (MRO)
+# In Python, every class whether built-in or user-defined is derived from the object class 
+# and all the objects are instances of the class object.
+# Hence, the object class is the base class for all the other classes.
+# In the case of multiple inheritance, a given attribute is first searched in the current class
+# if it’s not found then it’s searched in the parent classes. The parent classes are searched in a left-right 
+# fashion and each class is searched once.
+# If we see the below example then the order of search for the attributes will be Derived, Base1, Base2, object. The order that is followed is known as a linearization of the class Derived and this order is found out using a set of rules called Method Resolution Order (MRO).
+# To view the MRO of a class: 
+ 
+# Use the mro() method, it returns a list 
+# Eg. Class4.mro()
+# Use the _mro_ attribute, it returns a tuple 
+# Eg. Class4.__mro__
+''' 
+class Class1:
+    def m(self):
+        print("In Class1")
+ 
+class Class2(Class1):
+    def m(self):
+        print("In Class2")
+        super().m()
+ 
+class Class3(Class1):
+    def m(self):
+        print("In Class3")
+        super().m()
+ 
+class Class4(Class2, Class3):
+    def m(self):
+        print("In Class4")   
+        super().m()
+      
+print(Class4.mro())         #This will print list
+print(Class4.__mro__)        #This will print tuple
+'''
+
+# Polymorphism: polymorphism means one name many form, it refers to the use of the same function name,
+#               but with different signatures.
+# 2) polymorphism means the same function name (but different signatures) being used for different types.
+# Example: len("greeks"), len([1,2,3,4])
+
+class vehicle:
+    def __init__(self, b, m):
+        self.brand = b
+        self.modal = m
+    
+    def move(self):
+        print("Move")
+
+class car(vehicle):
+    pass
+
+class boat(vehicle):
+    def move(self):
+        print("sail!")
+
+class plane(vehicle):
+    def move(self):
+        print("fly")
+
+c = car("Tata", "Nexon")
+b = boat("India", "In 1")
+p = plane("Air india", "boeing")
+
+for x in (c, b, p):
+    print(x.brand)
+    print(x.modal)
+    x.move()
+
